@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -15,6 +16,7 @@ import java.sql.Timestamp;
 @Table(name="MOVIMENTO_MANUAL")
 public class MovimentoManual {
 
+    @Id
     private Integer datMes;
 
     @Column()
