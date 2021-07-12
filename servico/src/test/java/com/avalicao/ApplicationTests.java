@@ -1,4 +1,4 @@
-package com.avalicaobeijaflore;
+package com.avalicao;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

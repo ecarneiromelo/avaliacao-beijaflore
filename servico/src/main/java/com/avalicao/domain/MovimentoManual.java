@@ -1,40 +1,51 @@
-package com.avalicaobeijaflore.domain;
+package com.avalicao.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Builder
 @AllArgsConstructor
-@Table(name="MOVIMENTO_MANUAL")
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name = "TB_MOVIMENTO_MANUAL")
+@IdClass(MovimentoManualId.class)
 public class MovimentoManual {
 
     @Id
+    @Column(name = "DAT_MES")
     private Integer datMes;
 
-    @Column()
+    @Id
+    @Column(name = "DAT_ANO")
     private Integer datAno;
 
-    @Column()
+    @Id
+    @Column(name = "NUM_LANCAMENTO")
     private Long numLancamento;
 
-    @Column()
+    @Column(name = "DES_DESCRICAO")
     private String descricao;
 
-    @Column()
-    private Timestamp datMovimento;
+    @Column(name = "DAT_MOVIMENTO")
+    private LocalDateTime datMovimento;
 
-    @Column()
+    @Column(name = "COD_USUARIO")
     private String usuario;
 
-    @Column()
+    @Column(name = "VAL_VALOR")
     private BigDecimal valor;
 
     @ManyToOne
@@ -44,6 +55,5 @@ public class MovimentoManual {
     @ManyToOne
     @JoinColumn(name = "COD_COSIF")
     private ProdutoCosif produtoCosif;
-
 
 }
