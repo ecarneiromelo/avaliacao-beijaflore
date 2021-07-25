@@ -29,10 +29,10 @@ public class MovimentoManualController {
         return ResponseEntity.ok(this.movimentoManualService.buscar(id));
     }
 
-    @PostMapping("")
-    public ResponseEntity<MovimentoManualDTO> buscar(@RequestBody MovimentoManualDTO movimentoManualDTO) {
-        return ResponseEntity.ok(this.movimentoManualService.salvar(movimentoManualDTO));
-    }
+//    @PostMapping("")
+//    public ResponseEntity<MovimentoManualDTO> buscar(@RequestBody MovimentoManualDTO movimentoManualDTO) {
+//        return ResponseEntity.ok(this.movimentoManualService.salvar(movimentoManualDTO));
+//    }
 
 
 }

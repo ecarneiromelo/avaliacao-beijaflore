@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MovimentoManualRepository extends JpaRepository<MovimentoManual, MovimentoManualId> {
 
-    @Query("SELECT m.numLancamento FROM MovimentoManual m where m.datMes = :datMes and m.datAno = :datAno")
-    Long getNumLancamento(Integer mes, Integer ano);
+//    @Query("SELECT m.numLancamento FROM MovimentoManual m where m.datMes = :datMes and m.datAno = :datAno")
+//    Long getNumLancamento(Integer mes, Integer ano);
 
 }
