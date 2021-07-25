@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -23,7 +23,7 @@ public class MovimentoManualDTO {
     private Integer datAno;
     private Long numLancamento;
     private String descricao;
-    private Timestamp datMovimento;
+    private LocalDateTime datMovimento;
     private String usuario;
     private BigDecimal valor;
     private ProdutoDTO produto;

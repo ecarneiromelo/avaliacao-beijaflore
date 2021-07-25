@@ -29,26 +29,22 @@ public class MovimentoManualService {
         return movimentoManualRepository.findAll();
     }
 
-//    public MovimentoManualDTO salvar(MovimentoManualDTO movimentoManualDTO) {
-//        MovimentoManual movimentoManual = MovimentoManual.builder()
-//                .datAno(movimentoManualDTO.getDatAno())
-//                .datMes(movimentoManualDTO.getDatMes())
-//                .descricao(movimentoManualDTO.getDescricao())
-//                .numLancamento(getNum(movimentoManualDTO) + 1)
-//                .valor(movimentoManualDTO.getValor())
-//                .datMovimento(LocalDateTime.now())
-//                .usuario(USUARIO_TESTE)
-//                .produto(produtoMapper.toEntity(movimentoManualDTO.getProduto()))
-//                .produtoCosif(produtoCoisfMapper.toEntity(movimentoManualDTO.getProdutoCosif()))
-//                .build();
-//        return this.movimentoManualMapper.toDto(movimentoManualRepository.save(movimentoManual));
-//    }
+    public MovimentoManualDTO salvar(MovimentoManualDTO movimentoManualDTO) {
+        MovimentoManual movimentoManual = MovimentoManual.builder()
+                .datAno(movimentoManualDTO.getDatAno())
+                .datMes(movimentoManualDTO.getDatMes())
+                .descricao(movimentoManualDTO.getDescricao())
+                .numLancamento(getNum(movimentoManualDTO) + 1)
+                .valor(movimentoManualDTO.getValor())
+                .datMovimento(LocalDateTime.now())
+                .usuario(USUARIO_TESTE)
+                .produto(produtoMapper.toEntity(movimentoManualDTO.getProduto()))
+                .produtoCosif(produtoCoisfMapper.toEntity(movimentoManualDTO.getProdutoCosif()))
+                .build();
+        return this.movimentoManualMapper.toDto(movimentoManualRepository.save(movimentoManual));
+    }
 
     private Long getNum(MovimentoManualDTO movimentoManualDTO) {
-//        Long numLancamento = this.movimentoManualRepository.getNumLancamento(movimentoManualDTO.getDatMes(), movimentoManualDTO.getDatAno());
-//        if (numLancamento == null) {
-//            numLancamento = 0L;
-//        }
-        return 0L;
+        return this.movimentoManualRepository.getNumLancamento(movimentoManualDTO.getDatMes(), movimentoManualDTO.getDatAno()).get();
     }
 }

@@ -1,9 +1,6 @@
 package com.avalicao.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +13,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table(name = "TB_MOVIMENTO_MANUAL")
 @IdClass(MovimentoManualId.class)
+@Getter
+@Setter
 public class MovimentoManual {
 
     @Id
